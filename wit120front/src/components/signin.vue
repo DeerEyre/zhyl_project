@@ -1,13 +1,8 @@
 <template>
-  <div style="height: 100%">
-    <el-container style="height: 100%; border: 1px solid #eee">
-      <el-container>
-        <el-header style="display: flex">
-          <!-- <el-button type="text" @click="dialogFormVisible1 = true" style="font-size: 20px">注册</el-button> -->
-          <el-button type="text" @click="dialogFormVisible = true" style="font-size: 20px">登录</el-button>
-        </el-header>
-      </el-container>
-      
+  <div style="height: 100%;z-index:9999">
+    <!-- <el-button type="text" @click="dialogFormVisible1 = true" style="font-size: 20px">注册</el-button> -->
+    <el-button type="text" @click="dialogFormVisible = true" style="font-size: 25px;color:red">登录</el-button>
+    
       <el-dialog title="用户注册" :visible.sync="dialogFormVisible1" width="45%">
         <el-form :model="form">
           <el-form-item label="用户名" :label-width="formLabelWidth">
@@ -45,19 +40,14 @@
         <div slot="footer" class="dialog-footer2">
           <el-button  type="success"  @click="dialogFormVisible1 = true" style="font-size: 15px;position:absolute;left:40px">注册</el-button>
           <el-button @click="dialogFormVisible = false">取 消</el-button>
-          <el-button type="primary" @click="dialogFormVisible = false" >确 定</el-button>
-
+          <el-button type="primary" @click="getstatus" >确 定</el-button>
         </div>
         </el-dialog>
 
-      
-    </el-container>
   </div>
 </template>
 
 <script>
-
-import axios from "axios";
 
 export default {
   name: 'LoginView',
@@ -65,6 +55,8 @@ export default {
     return {
       dialogFormVisible1: false,
       dialogFormVisible: false,
+      Authentication:false,
+      
       form: {
         username: '',
         password: '',
@@ -86,24 +78,13 @@ export default {
     },
     sendVerificationCode(){
       console.log(this.verificationCode)
-      
+    },
+
+    getstatus:function(){
+      this.Authentication=true
+      this.$emit('getstatus',this.Authentication)
+
     }
   }
 }
 </script>
-
-<style>
-.el-header {
-  background-color: #eeeeee;
-  color: #333;
-  line-height: 80px;
-  height: 80px!important;
-}
-
-.el-aside {
-  color: #333;
-}
-.headerBg{
-  background: #eee!important;
-}
-</style>

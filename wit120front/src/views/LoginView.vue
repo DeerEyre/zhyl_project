@@ -2,11 +2,6 @@
 
 
 <el-container style="height: 650px; border: 1px solid #eee">
-<el-header style="text-align: left">
-  <p style="font-size:30px;color:white;margin-right: 15px;">智慧医疗信息系统</p>
-  <p style="font-size:15px;color:white;position:fixed;left:280px;top:25px">Intelligent medical information system</p>
-</el-header>
-
 <el-header>
 <div class="line"></div>
 <el-menu
@@ -26,8 +21,8 @@
   <el-menu-item index="7" disabled><a href="https://www.ele.me" target="_blank">赞助我们</a></el-menu-item>
 
   <div v-if="Authentication===false">
-    <p style="font-size:25px;position:fixed;right:210px;top:16px; color:white;">您好！请</p>
-    <signin style="position:fixed;right:155px;top:45px;"  v-on:getstatus="getstatus"></signin>
+    <p style="font-size:25px;position:absolute;right:185px;top:-20px; color:white;">您好！请</p>
+    <signin style="position:absolute;right:130px;top:10px;"  v-on:getstatus="getstatus"></signin>
   </div>
   
   <div v-if="Authentication===true">

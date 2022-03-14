@@ -1,10 +1,10 @@
 <template>
+
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/main">Main</router-link>|
-      <!-- <router-link to="/login">Login</router-link> -->
-    </nav>
+    <el-header style="text-align: left">
+  <p style="font-size:30px;color:white;margin-right: 15px;">智慧医疗信息系统</p>
+  <p style="font-size:15px;color:white;position:absolute;left:280px;top:25px">Intelligent medical information system</p>
+</el-header>
     <router-view/>
   </div>
 </template>
@@ -14,7 +14,6 @@
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
 }
 

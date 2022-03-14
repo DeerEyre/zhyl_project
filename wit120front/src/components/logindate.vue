@@ -1,22 +1,24 @@
   <template>
+  <div>
     <el-table
       :data="tableData"
       style="width: 100%">
       <el-table-column
-        prop="date"
-        label="日期"
-        width="180">
-      </el-table-column>
-      <el-table-column
-        prop="detail"
-        label="病情详情"
-        width="180">
-      </el-table-column>
-      <el-table-column
         prop="doctor"
-        label="主治医师">
+        label="医师"
+        width="180">
+      </el-table-column>
+      <el-table-column
+        prop="department"
+        label="科室"
+        width="180">
+      </el-table-column>
+      <el-table-column
+        prop="habit"
+        label="资历">
       </el-table-column>
     </el-table>
+  </div>
   </template>
 
   <script>
@@ -24,21 +26,21 @@
       data() {
         return {
           tableData: [{
-            date: '2022-03-02',
-            detail: '脑瘫',
-            doctor: '甘舒'
+            doctor: '甘舒',
+            department: '内科',
+            habit: '英语六级430分'
           }, {
-            date: '2016-05-04',
-            detail: '阳痿',
-            doctor: '腰腰'
+            doctor: '腰腰',
+            department: '外科',
+            habit: '有瑶的情人节皮肤'
           }, {
-            date: '2016-05-01',
-            detail: '痔疮',
-            doctor: '巴子'
+            doctor: '巴子',
+            department: '耳鼻喉科',
+            habit: '未来群主'
           }, {
-            date: '2016-05-03',
-            detail: '早泄',
-            doctor: '硕硕'
+            doctor: '硕硕',
+            department: '妇科',
+            habit: '野爹'
           }]
         }
       }
