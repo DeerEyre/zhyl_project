@@ -1,72 +1,58 @@
 <template>
-<el-form
-  :model="ruleForm"
-  :rules="rules"
-  ref="ruleForm"
-  label-width="100px"
-  class="demo-ruleForm"
-  >
-  <el-form-item prop="user">
-  <el-input
-  type="text"
-  placeholder="请输入手机号或者邮箱号"
-  required="required"
-  v-model="ruleForm.user"
-  prefix-icon="el-icon-user-solid"
-  ></el-input>
-  </el-form-item>
-  <el-form-item prop="pass">
-  <el-input
-  type="password"
-  placeholder="请输入密码"
-  prefix-icon="el-icon-lock"
-  v-model="ruleForm.pass"
-   @keyup.enter="toSubmitForm('ruleForm')"
-  ></el-input>
-  </el-form-item>
-  <el-form-item>
-  <el-button type="primary" @click="submitForm('ruleForm')">登录</el-button>
-  </el-form-item>
- </el-form>
+  <div class="hello">
+    <h1>{{ msg }}</h1>
+    <p>
+      For a guide and recipes on how to configure / customize this project,<br>
+      check out the
+      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
+    </p>
+    <h3>Installed CLI Plugins</h3>
+    <ul>
+      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
+      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-router" target="_blank" rel="noopener">router</a></li>
+    </ul>
+    <h3>Essential Links</h3>
+    <ul>
+      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
+      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
+      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
+      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
+      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
+    </ul>
+    <h3>Ecosystem</h3>
+    <ul>
+      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
+      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
+      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
+      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
+      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
+    </ul>
+  </div>
 </template>
 
 <script>
-  export default {
-data() {
- var validatePass = (rule, value, callback) => {
- if (value === '') {
-  callback(new Error('请输入密码'))
- } else {
-  callback()
- }
- }
- var validateUser = (rule, value, callback) => {
- if (value === '') {
-  callback(new Error('手机号或者邮箱不能为空'))
- } else {
-  const reg = /^1[3|4|5|7|8][0-9]\d{8}$/
-   // eslint-disable-next-line no-useless-escape
-  const reg2 = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
- if ((reg.test(value) || reg2.test(value))) {
- callback()
- } else {
- callback(new Error('请输入正确的手机号或者邮箱'))
- }
- }
- }
- return {
- // 获取url地址后面的参数
- urlQuery: '',
- activeIndex: '1',
- ruleForm: {
-  pass: '',
-  user: ''
- },
- rules: {
-  user: [{ required: true, validator: validateUser, trigger: 'blur' }],
-  pass: [{ required: true, validator: validatePass, trigger: 'blur' }]
- }
- }
- }
+export default {
+  name: 'HelloWorld',
+  props: {
+    msg: String
   }
+}
 </script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+h3 {
+  margin: 40px 0 0;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+a {
+  color: #42b983;
+}
+</style>

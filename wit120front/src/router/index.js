@@ -1,32 +1,38 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-import MainView from '../views/MainView.vue'
-import LoginView from '../views/LoginView.vue'
-import PersonalView from '../views/PersonalView.vue'
+import HomeView2 from '../views/HomeView2.vue'
+import DepartmentView from "@/views/DepartmentView";
+import ModifyView from "@/views/ModifyView";
+import PasswordView from "@/views/PasswordView";
+import ClinicView from "@/views/ClinicView";
+
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: PersonalView
+    component: HomeView2
   },
   {
-    path: '/main',
-    name: 'main',
-
-    component:MainView
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    // component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    path: '/Department',
+    name: 'department',
+    component: DepartmentView
   },
   {
-    path: '/login',
-    name: 'login',
-
-    component:LoginView
+    path: '/UserInfo',
+    name: 'information',
+    component: ModifyView
+  },
+  {
+    path: '/Password',
+    name: 'password',
+    component: PasswordView
+  },
+  {
+    path: '/Clinic',
+    name: 'clinic',
+    component: ClinicView
   }
 ]
 
